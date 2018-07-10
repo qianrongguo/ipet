@@ -6,8 +6,30 @@ const avatar2 = 'http://sfmimg.b0.upaiyun.com/prod_00/1b70518c528f199e.jpg'
 const cat = [
     'http://sfmimg.b0.upaiyun.com/prod_00/dd3c0d2669b29d39.png!/fw/400',
     'http://sfmimg.b0.upaiyun.com/prod_00/13eb58a6042f910b.png!/fw/400',
-    'http://sfmimg.b0.upaiyun.com/prod_00/b38a89c988651908.png!/fw/400',
 ]
+
+const cat2 = [
+    'http://sfmimg.b0.upaiyun.com/prod_00/d734ccf4689f1a9e.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/f7f32171bf55e586.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/5487f9a7896c39a5.jpg!/fw/400',
+    ]
+
+const cat3 = [
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400'
+]
+
+const cat5 = [
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
+    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400'
+
+]
+
+
 
 // 这边默认习惯是用Index做组件名，为什么呢，因为文件名已经是posts了，其实这里你也可以叫 Posts
 const RenderPosts = () => {
@@ -57,14 +79,83 @@ const RenderPosts = () => {
                 </div>
                 <div className="imglist count3">
                     {
+                        cat2.map((data,index) => <div key={index} className="icon" style={{backgroundImage:`url(${data})`}}></div>)
+                    }
+                </div>
+            </div>
+
+            <div className="post-item">
+                <div className="top">
+                    <img src={avatar2} />
+                    <span>我是郭思特</span>
+                </div>
+                <div className="content">
+                    <div>大家快来给我小赞赞👍</div>
+                    来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。
+                </div>
+                <div className="imglist count3">
+                    {
+                        cat2.map((data,index) => <div key={index} className="icon" style={{backgroundImage: `url(${data})`}}></div>)
+                    }
+                </div>
+            </div>
+
+            <div className="post-item">
+                <div className="top">
+                    <img src={avatar2} />
+                    <span>我是郭思特</span>
+                </div>
+                <div className="content">
+                    <div>大家快来给我小赞赞👍</div>
+                    来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。
+                </div>
+                <div className="imglist count3">
+                    {
+                        cat2.map((data,index) => <div key={index} className="icon" style={{backgroundImage: `url(${data})`}}></div>)
+                    }
+                </div>
+                <div className="imglist count3">
+                    {
+                        cat3.map((data,index) => <div key={index} className="icon" style={{backgroundImage: `url(${data})`}}></div>)
+                    }
+                </div>
+            </div>
+
+            <div className="post-item">
+                <div className="top">
+                    <img src={avatar2} />
+                    <span>我是郭思特</span>
+                </div>
+                <div className="content">
+                    <div>大家快来给我小赞赞👍</div>
+                    来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。
+                </div>
+                <div className="imglist count3">
+                    {
+                        cat3.map((data,index) => <div key={index} className="icon" style={{backgroundImage: `url(${data})`}}></div>)
+                    }
+                </div>
+                <div className="imglist count3">
+                    {
                         cat.map((data,index) => <div key={index} className="icon" style={{backgroundImage: `url(${data})`}}></div>)
                     }
                 </div>
             </div>
+
+
         </div>
     )
 }
 
+// function countImg() {
+//     const elem = document.getElementsByClassName("count5");
+//     if ((elem.length)/3 === 0){
+//         elem.setAttribute("margin-right: 0rem;")
+//     }else {
+//
+//     }
+// }
+// countImg()
 export default RenderPosts
 
 
