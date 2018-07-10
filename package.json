@@ -21,10 +21,8 @@
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
     "next": "^6.1.1",
+    "next-images": "^0.10.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
-  },
-  "devDependencies": {
-    "next-images": "^0.10.5"
   }
 }
