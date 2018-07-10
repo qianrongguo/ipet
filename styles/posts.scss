@@ -1,0 +1,53 @@
+
+.post-list{
+  background-color: #f5f5f5;
+
+  .post-item{
+    padding: .7rem 1.25rem;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+    display:block;
+    .imglist {
+      margin: .6rem 1.25rem;
+      width: 16.25rem;
+      .icon{
+        display: inline-block;
+        background-size: cover;
+        height: 8rem;
+      }
+    }
+    .count1 .icon{
+      width: 16rem;
+    }
+    .count2 .icon{
+      width: 8rem;
+    }
+    .count3 .icon{
+      width: 5rem;
+      height: 5rem;
+    }
+    .content{
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      display: -webkit-inline-box;
+      word-break: break-word;
+    }
+    .top{
+      height: 2rem;
+      img{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        float: left;
+      }
+      span{
+        margin-left: .75rem;
+        font-size: .7rem;
+        line-height: 2rem;
+        color: #90959a;
+        float: left;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
-// import '../styles/posts.sass'
+import '../styles/share.scss'
+import '../styles/posts.scss'
 import avatar from '../images/icon/avatar.png'
 const avatar2 = 'http://sfmimg.b0.upaiyun.com/prod_00/1b70518c528f199e.jpg'
 
@@ -60,78 +61,6 @@ const RenderPosts = () => {
                     }
                 </div>
             </div>
-            <style jsx global>{`
-            body{
-                margin: 0;
-                padding: 0;
-            }
-            .icon{
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-           `}</style>
-
-            <style jsx>{`
-            .post-list{
-                background-color: #f5f5f5;
-            }
-            .post-item{
-                padding: .7rem 1.25rem;
-                background-color: #fff;
-                margin-bottom: 0.5rem;
-                display:block;
-            }
-            .post-item .top{
-                height: 2rem;
-            }
-            .post-item .top img{
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50%;
-                float: left;
-            }
-            .post-item .top span{
-                margin-left: .75rem;
-                font-size: .7rem;
-                line-height: 2rem;
-                color: #90959a;
-                float: left;
-            }
-            .imglist {
-                margin: .6rem 1.25rem;
-                width: 16.25rem;
-            }
-            .imglist img{
-                 width:auto;
-                 height:auto;
-                 max-width:100%;
-                 max-height:100%;
-            }
-            .imglist .icon{
-                display: inline-block;
-                background-size: cover;
-                height: 8rem;
-            }
-            .count1 .icon{
-                width: 16rem;
-            }
-            .count2 .icon{
-                width: 8rem;
-            }
-            .count3 .icon{
-                width: 5rem;
-                height: 5rem;
-            }
-
-            .post-item .content{
-                overflow: hidden;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                display: -webkit-inline-box;
-                word-break: break-word;
-            }
-    `}</style>
         </div>
     )
 }
