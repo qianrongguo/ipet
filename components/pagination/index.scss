@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination {
+  list-style: none;
+  height: 30px;
+  display: flex; // flex布局
+  justify-content: center;
+  li {
+    &.disable {
+      border-color: gray;
+      a{
+        cursor: not-allowed;
+        color: gray;
+      }
+    }
+    .previous {
+      a {
+        em{
+          color: grey;
+          font-style: normal;
+        }
+
+      }
+
+    }
+
+    &.current {
+      background-color: cornflowerblue;
+      a {
+        color: #fff;
+      }
+    }
+    margin-right: 6px;
+    padding: 6px 9px;
+    font-size: 18px;
+    line-height: 18px;
+    border: 1px solid cornflowerblue;
+    a {
+      text-decoration: none; // 去掉下划线
+    }
+  }
+}

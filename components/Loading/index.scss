@@ -1,0 +1,23 @@
+.loading0{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  margin-left: -80px;
+}
+.loading1{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  transform: translate(-50%, -50%);
+}
+.loading2{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 160px;
+}

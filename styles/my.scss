@@ -1,0 +1,86 @@
+body {
+  margin: 0 auto;
+  .my {
+    height: 9rem;
+    border-bottom: #90959a 1px solid;
+    .headbox {
+      display: inline-block;
+      max-width: 25rem;
+      width: 100%;
+      height: 9rem;
+      background-size: cover;
+      background-image: url("../images/icon/head.png");
+      background-repeat: no-repeat;
+      position: relative;
+      .avatar {
+        display: block;
+        height: 2.8rem;
+        width: 2.8rem;
+        position: absolute;
+        left: 1.25rem;
+        top: 2.5rem;
+        border-radius: .2rem;
+      }
+      .arrow-box {
+        i {
+          position: absolute;
+          margin: 3rem auto;
+          display: block;
+          width: 1.4rem;
+          height: 1.65rem;
+          right: 0;
+          background-image: url("../images/icon/back.png");
+        }
+      }
+      .icon {
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+      .user-info {
+        position: absolute;
+        width: 12rem;
+        height: 2.8rem;
+        left: 4.8rem;
+        top: 2.5rem;
+        .nick {
+          color: black;
+          line-height: 1.65rem;
+          font-size: .85rem;
+        }
+        .info {
+          bottom: 0;
+          color: darksalmon;
+          font-size: .9rem;
+        }
+      }
+    }
+
+    .link-list {
+      list-style: none;
+      margin: 0 auto;
+      padding-left: 1.3rem;
+      li {
+        i {
+          display: block;
+          float: left;
+          margin-top: .625rem;
+          width: 1.3rem;
+          height: 1.3rem;
+          background-image: url("../images/icon/mushroom.png");
+          background-size: contain;
+          background-position: 50%;
+          background-repeat: no-repeat;
+        }
+        .name{
+          float: left;
+          line-height: 2.7rem;
+          font-size: .85rem;
+          color: #020202;
+          padding-left: 1rem;
+        }
+      }
+    }
+
+  }
+}
