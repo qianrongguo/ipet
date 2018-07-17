@@ -13,30 +13,6 @@ const cat = [
     'http://sfmimg.b0.upaiyun.com/prod_00/13eb58a6042f910b.png!/fw/400',
 ]
 
-const cat2 = [
-    'http://sfmimg.b0.upaiyun.com/prod_00/d734ccf4689f1a9e.jpg!/fw/400',
-    'http://sfmimg.b0.upaiyun.com/prod_00/f7f32171bf55e586.jpg!/fw/400',
-    'http://sfmimg.b0.upaiyun.com/prod_00/5487f9a7896c39a5.jpg!/fw/400',
-]
-
-const cat3 = [
-    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-    'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400'
-]
-
-
-
-// const cat6 = [
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400',
-//     'http://sfmimg.b0.upaiyun.com/prod_00/63b3912f8d21cb0c.jpg!/fw/400'
-//
-// ]
-
 
 // 这边默认习惯是用Index做组件名，为什么呢，因为文件名已经是posts了，其实这里你也可以叫 Posts
 // 函数式组件 state less
@@ -79,7 +55,7 @@ const Posts = (props) => {
     //             </div>
     //             <div className="content">
     //                 <div>大家快来给我小赞赞👍</div>
-    //                 来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。
+    //                 来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知-----道拿它怎么办。
     //             </div>
     //             <div className="imglist count1">
     //                 <div className="icon" style={{backgroundImage: `url(${cat[0]})`}}></div>
@@ -93,7 +69,7 @@ const Posts = (props) => {
     //                 </div>
     //                 <div className="content">
     //                     <div>大家快来给我小赞赞👍</div>
-    //                     来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。
+    //                     来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。来我家还没满月，不知道拿它怎么办。-------------------
     //                 </div>
     //                 <div className="imglist count2">
     //                     <div className="icon" style={{backgroundImage: `url(${cat[0]})`}}></div>

@@ -16,16 +16,6 @@ body {
         color: gray;
       }
     }
-    .previous {
-      a {
-        em{
-          color: grey;
-          font-style: normal;
-        }
-
-      }
-
-    }
 
     &.current {
       background-color: cornflowerblue;
@@ -33,6 +23,7 @@ body {
         color: #fff;
       }
     }
+    border-radius:6px; 
     margin-right: 6px;
     padding: 6px 9px;
     font-size: 18px;
