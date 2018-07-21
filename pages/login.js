@@ -1,116 +1,124 @@
-import React, {Component} from 'react'
-import avater from '../images/icon/title.png'
+import { Component } from 'react'
+import Router from 'next/router'
+import logo from '../images/icon/title.png'
+import '../styles/login.scss'
+// 设置cookie
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+   //获取cookie
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+     var c = ca[i];
+     while (c.charAt(0)==' ') c = c.substring(1);
+     if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+//清除cookie 
+function clearCookie(name) { 
+    setCookie(name, "", -1); 
+} 
+class Index extends Component {
+    state = {
+        warning: '',
+    }
+    static async getInitialProps (context) {
+        const { role = '0' } = context.query
+        return { role }
+    }
+    handleOKClick() {
+        const { url, role} = this.props
+        const { account, pwd } = this.refs
+        const accountValue = account.value.trim()
+        const pwdValue = pwd.value.trim()
+        if (!accountValue) {
+            this.setState({
+                warning: (role === '1' ? '账号' : '身份证号') + '不能为空'
+            })
+            this.doTimeoutFunc(this.resetWarning)
+            return
+        }
 
-const Index = () => (
-    <div className="sign">
-        <div className="close">
-            <i className="icon"></i>
-        </div>
-        <img src={avater} alt=""/>
+        if (!pwdValue) {
+            this.setState({
+                warning: (role === '1' ? '密码' : '姓名') + '不能为空'
+            })
+            this.doTimeoutFunc(this.resetWarning)
+            return
+        }
 
-        <div className="input-list">
-            <div className="input-item">
-                <div className="txt message">
-                    身份证号
+        if (accountValue && pwdValue) {
+            console.log(accountValue, pwdValue)
+            this.setState({
+                warning: '正在登录...'
+            })
+            this.doTimeoutFunc(()=>{
+                setCookie('user', JSON.stringify({
+                    account: accountValue,
+                    pwd: pwdValue
+                }))
+                this.setState({
+                    warning: '登录成功！'
+                })
+                this.doTimeoutFunc(()=>{
+                    Router.push('/posts')
+                })
+            })
+        }
+    }
+    resetWarning=()=>{
+        this.setState({
+            warning: ''
+        })  
+    }
+    doTimeoutFunc(callback) {
+        const t1 = setTimeout(() => {
+            typeof callback === 'function' && callback()
+            clearTimeout(t1)
+        }, 1000)
+    }
+    render() {
+        console.log('props', this.props)
+        const { url, role } = this.props
+        // 默认家长登录
+        const account = role === '1' ? '账号' : '身份证号'
+        const pwd = role === '1' ? '密码' : '姓名'
+        return (
+            <div className="sign">
+                <div className="close">
+                    <i className="icon"></i>
                 </div>
-                <input type="text" placeholder="电此输入身份证号"/>
-            </div>
-            <div className="clearboth">
+                <img src={logo} alt="" />
 
-            </div>
-            <div className="input-item">
-                <div className="txt message">
-                    姓名
+                <div className="input-list">
+                    <div className="input-item">
+                        <div className="txt message">
+                            {account}
+                        </div>
+                        <input ref="account" type="text" placeholder={`输入${account}`} />
+                    </div>
+                    <div className="input-item">
+                        <div className="txt message">
+                            {pwd}
+                        </div>
+                        <input ref="pwd" type={role === '1' ? 'password' : 'text'} placeholder={`输入${pwd}`} />
+                    </div>
                 </div>
-                <input type="text" placeholder='电此输入姓名'/>
+                <button
+                    className="ok"
+                    onClick={this.handleOKClick.bind(this)}
+                >登录</button>
+                <div className="warning" >{this.state.warning}</div>
             </div>
-            <div className="clearboth">
+        )
+    }
+}
 
-            </div>
-
-
-        </div>
-        <button className="ok">登陆</button>
-
-
-        <style jsx>
-            {`
-            img{
-                display:block;
-               width:100px;
-               height:auto;
-               margin:130px auto;
-               margin-bottom:40px
-           }
-           .input-list{
-               padding:0.75rem;
-               display:block;
-
-           }
-            .input-item{
-               padding:0.35rem;
-               height:2.75rem;
-               display:block
-                }
-
-            .input-item .txt{
-                 width: 3rem;
-                 margin-right: 1.8rem;
-                color: #333;
-                font-size: .75rem;
-
-             }
-
-
-            .input-item div{
-                height:2.75rem;
-                line-height:2.75rem;
-                float:left;
-
-            }
-
-            .input-item input{
-                    outline: none;
-                    border: 1px solid grey;
-                    margin-top: .8rem;
-                    margin-left: 2rem;
-                    box-shadow:1px 1px 0px 0px #aaa inset;
-
-            }
-            .clearboth:before{
-                content: "";
-                position: absolute!important;
-                width: 200%;
-                height: 200%;
-                border-top: 1px solid #dcdcdc;
-                -webkit-transform-origin: 0 0;
-                -ms-transform-origin: 0 0;
-                transform-origin: 0 0;
-                -webkit-transform: scale(.5);
-                -ms-transform: scale(.5);
-                transform: scale(.5);
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-            }
-            }
-
-            .ok{
-                display:block;
-                height:2.375rem;
-                width:15rem;
-                border-radius:1.25rem;
-                border:1px solid #e1e1e1;
-                margin:0 auto;
-                margin-top: 2.9rem;
-                color:#fcfcfc;
-                font-size:.85rem;
-                 background: linear-gradient(90deg,#fde052,#febf05);
-            }
-
-
-            `}
-        </style>
-    </div>
-)
 
 export default Index

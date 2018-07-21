@@ -1,6 +1,7 @@
+import '../styles/flex.scss'
 const Index = () => (
-    <div>
-        <p>Hello Next.js</p>
+    <div className="box">
+
     </div>
 )
 

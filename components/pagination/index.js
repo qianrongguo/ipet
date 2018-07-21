@@ -10,29 +10,69 @@ const Index = (props) => {
         size = 10, // 每页10条数据
     } = props;
     const maxPage = Math.ceil(totalCount / size)
-    // page_num = 
-    // drc = [this.currentPage - 4, this.currentPage - 3, this.currentPage - 2, this.currentPage - 1, this.currentPage, this.currentPage + 1, this.currentPage + 2, this.currentPage + 3, this.currentPage + 4, this.currentPage + 5]
-    // Array.apply(null,{length: 5}) // 快速生成数组，可以map
-    // maxPage
-    const arr = Array.apply(null,{length: maxPage})
+    
+    const leftJump = currentPage-diff
+    let rightJump = currentPage+diff
+    rightJump = rightJump<=maxPage?rightJump:maxPage
+    let arr = []
+    if (maxPage>diff && currentPage<diff) {
+        arr = [1,2,3,4,5]
+    }
+    else if (maxPage === 4) {
+        arr = [1,2,3, 4]
+    }
+    else if (maxPage === 3) {
+        arr = [1,2,3]
+    }
+    else if (maxPage === 2) {
+        arr = [1,2]
+    }
+    else if (maxPage === 2) {
+        arr = [1,2]
+    }
+    else if (currentPage>diff) {
+        // '1 ... 4 5 6 7 8 ... 14'
+        arr = [
+            currentPage-2,
+            currentPage-1,
+            currentPage,
+            currentPage+1,
+            currentPage+2,
+        ]
+    } else if (currentPage + 2 >= maxPage){
+        // '1 ...  10 11 12 13 14'
+        arr = [
+            currentPage-2,
+            currentPage-1,
+            currentPage,
+            currentPage+1,
+            currentPage+2,
+        ]
+    }
     return (
         <ul className="pagination">
             <li className={currentPage === 1 ? 'disable' : ''}><a href="#">&lt;</a></li>
             {
-                arr.map((d,i) => (
+                currentPage>diff && <li><a href="#">1</a></li>
+            }
+            {
+              leftJump>=1 && <li><a href="#" title={leftJump>=1?leftJump:1}>{'...'}</a></li>
+            }
+            {
+                arr.map(data=> (
                     <li 
-                        key={i+1} 
-                        className={currentPage === (i+1) ? 'current' : ''}
+                        key={data} 
+                        className={currentPage === data ? 'current' : ''}
                     >
-                        <a href="#">{i+1}</a>
+                        <a href="#">{data}</a>
                     </li>
                 ))
             }
             {
-              maxPage>6 && <li><a href="#" title={currentPage+diff}>{'...'}</a></li>
+               !arr.includes(maxPage) && maxPage>(diff+1) && <li><a href="#" title={rightJump}>{'...'}</a></li>
             }
             {
-                maxPage>=6 && <li><a href="#">{maxPage}</a></li>
+                !arr.includes(maxPage) && maxPage>diff && <li><a href="#">{maxPage}</a></li>
             }
             <li className={currentPage === maxPage ? 'disable' : ''}><a href="#">&gt;</a></li>
         </ul>
@@ -46,7 +86,7 @@ const Index = (props) => {
 export default Index
 
 
-// class Index extends Component {
+// class Index extends Component {   
 //     constructor(props) {
 //         super(props);
 //         this.state = {

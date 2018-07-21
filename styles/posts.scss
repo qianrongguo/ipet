@@ -2,11 +2,16 @@
   background-color: #f5f5f5;
 
   .post-item{
+
+    width:22.5rem ;
+    // align-content: center;
     padding: .7rem 1.25rem;
     background-color: #fff;
     margin-bottom: 0.5rem;
     display:block;
+    max-width: 37.5rem;
     .imglist {
+      align-content: center;
       margin: .3rem 1.25rem .05rem 1.25rem;
       width: 16.35rem;
       .icon{
@@ -37,6 +42,7 @@
       -webkit-box-orient: vertical;
       display: -webkit-inline-box;
       word-break: break-word;
+      font-size: .75rem;
     }
     .top{
       height: 2rem;
