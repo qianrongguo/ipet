@@ -1,5 +1,5 @@
 import '../styles/share.scss'
-import '../styles/post.scss'
+import '../styles/findPost.scss'
 import avatar from '../images/icon/1.png'
 
 const avatar2 = 'http://sfmimg.b0.upaiyun.com/prod_00/1b70518c528f199e.jpg'
@@ -16,8 +16,7 @@ const Find = () => {
     return (
         <div className="find-top">
 
-            <div className="body">
-
+            <div className="wrap">
                 <div className="top">
                     <img src={avatar2} alt="123"/>
                     <span>我是郭斯特</span>
@@ -30,9 +29,8 @@ const Find = () => {
             </div>
             <div className="comment">
                 <div className="comment-title">
-                    <div className='text'>用户评论</div>
+                    用户评论
                 </div>
-                <hr/>
 
                 <ul className='comment-list'>
                     <li>
@@ -44,7 +42,6 @@ const Find = () => {
                         </div>
                     </li>
                 </ul>
-                <hr/>
             </div>
         </div>
 

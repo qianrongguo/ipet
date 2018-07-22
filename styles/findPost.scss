@@ -1,4 +1,6 @@
 .find-top {
+  display: block;
+  height: auto;
   .nav {
     width: 100%;
     height: 2.4rem;
@@ -17,7 +19,7 @@
 
     border-bottom: #90959a 3px solid;
   }
-  .body {
+  .wrap {
     padding: 1.2rem 1.2rem;
     display: block;
     border-bottom: hsla(0, 0%, 100%, 0.25) 10px outset;
@@ -42,6 +44,7 @@
       }
       span {
         margin-left: .75rem;
+        margin-top: 1.163rem;
         font-size: .7rem;
         line-height: 2rem;
         color: #90959a;
@@ -56,44 +59,52 @@
       height: 2.45rem;
       line-height: 2.45rem;
       color: #020202;
-      font-size: 1.5rem;
-      margin: 1rem auto;
-      border-left: 7px burlywood solid;
-      .text {
-        margin-left: 1rem
-      }
+      font-size: 1rem;
+      border-bottom: 1px solid #ded7d7;
+    }
+    .comment-title:before{
+      border-left: .2rem solid #ffc913;
+      content: "";
+      padding-right: .5rem;
     }
     .comment-list {
       list-style: none;
-      padding-left: 0;
-      //padding-top: 1rem;
-      display:inline-block;
-
-      img {
-        width: 2.7rem;
-        height: 2.7rem;
-        border-radius: 50%;
-        position: absolute;
-        left: 1.5rem;
-      }
+      margin:0;
+      padding: 0;
+      li{
+        position: relative;
+        min-height: 2.25rem;
+        padding-right: 1.25rem;
+        padding-top: 1rem;
+        img {
+          width: 2.7rem;
+          height: 2.7rem;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+        }
         .create {
           position: absolute;
           right: 1.5rem;
           font-size:.65rem
         }
       .nicktext{
-        padding-left: 3.25rem;
+        padding-left: 4rem;
         padding-bottom: 1rem;
         .nick{
           line-height: .75rem;
           font-size: .65rem;
+          color: #5d666e;
         }
         .text{
           padding-top: .375rem;
           line-height: .9rem;
-          color:black;
+          color:#333;
         }
 
+      }
+     
+       
       }
 
     }

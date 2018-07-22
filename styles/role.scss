@@ -1,12 +1,28 @@
 .stb-home{
     margin-top: 2.5rem;
+    .role-t{
+        margin-bottom: 60px;
+        .role-title{
+            display: block;
+            margin:0 auto;
+            background-image: url('../images/icon/roletitle.png'); 
+            width: 15.2rem;
+            height: 2.975rem;
+            margin-top: 1.5rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        .role-sub-title{
+            color:grey;
+            font-size:.8rem;
+            margin-left: 25%;
+        }
+    }
+    
 }
 
-.role-sub-title{
-    color:grey;
-    font-size:.8rem;
-    margin-left: 25%;
-}
+
 .role-select button{
     display: block;
     height: 2.8rem;
@@ -52,18 +68,4 @@ button{
     font-size:.85rem;
     background: linear-gradient(90deg,#fde052,#febf05);
 }
-.role-t{
 
-    margin-bottom: 60px;
-}
-.role-title{
-    display: block;
-    margin:0 auto;
-    background-image: url('../images/icon/roletitle.png'); // 你的微信呢啊啊？ 赶紧引入图片啊
-    width: 15.2rem;
-    height: 2.975rem;
-    margin-top: 1.5rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-}

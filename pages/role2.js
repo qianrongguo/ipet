@@ -1,27 +1,25 @@
 import '../styles/role.scss'
 import { Component } from 'react'
 import Link from 'next/link'
-// 什么都我动手 你一行都写不来
-// 引入css或者scss 需要变量保存吗。。。。你仔细看看其他页
+
 class Index extends Component {
-    state={
+    state = {
         curentRole:0
     }
-    roles=[
+    roles = [
         '家长',
         '老师',
-        '管理员',
+        '管里员',
     ]
     handleClick(index){
         this.setState({
-            curentRole: index
+            curentRole:index
         })
     }
-  
     render() {
-        // const curentRole = this.state.curentRole
         const {curentRole} = this.state
         return (
+
             <div className="stb-home">
                 <div className="role-t">
                     <div className="role-title"></div>
@@ -31,6 +29,7 @@ class Index extends Component {
                 {
                     this.roles.map((data,index)=>(
                         <button
+                           
                             onClick={this.handleClick.bind(this, index)}
                             className={curentRole===index ? 'active' : ''}
                             key={index}
@@ -39,8 +38,17 @@ class Index extends Component {
                         </button>
                     ))
                 }
+                {/* <button className="active">进入家长角色</button>
+                <button className="false">进入老师角色</button>
+
+                <button className="false">进入管理员角色</button> */}
                 </div>
-                <Link href={`/login?role=${curentRole}`}><button className="ok">确定</button></Link>
+                {/* <Link href={`/login?role=${curentRole}`}><button className="ok">确定</button></Link> */}
+
+                <Link href={`/login?role=${curentRole} `}>
+                <button className="ok">登录</button>
+                </Link>
+                
             </div>
         )
     }

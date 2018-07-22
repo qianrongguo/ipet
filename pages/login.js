@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Router from 'next/router'
+import Link from 'next/link'
 import logo from '../images/icon/title.png'
 import '../styles/login.scss'
 // 设置cookie
@@ -9,21 +10,6 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
-   //获取cookie
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-     var c = ca[i];
-     while (c.charAt(0)==' ') c = c.substring(1);
-     if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-//清除cookie 
-function clearCookie(name) { 
-    setCookie(name, "", -1); 
-} 
 class Index extends Component {
     state = {
         warning: '',
@@ -32,6 +18,7 @@ class Index extends Component {
         const { role = '0' } = context.query
         return { role }
     }
+   
     handleOKClick() {
         const { url, role} = this.props
         const { account, pwd } = this.refs
@@ -92,7 +79,7 @@ class Index extends Component {
         return (
             <div className="sign">
                 <div className="close">
-                    <i className="icon"></i>
+                    <Link href='/role'><i className="icon" ></i></Link>
                 </div>
                 <img src={logo} alt="" />
 
