@@ -1,0 +1,69 @@
+.navListBox {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 25rem;
+    height: 2.5rem;
+    background-color: #fff;
+    z-index: 999;
+    // display: flex;
+    -webkit-box-shadow:0 -1px 0 0 rgba(0,0,0,.1);
+    display: -webkit-box;
+    a {
+        display: flex;
+        -webkit-box-flex: 1;
+        height: 3rem;
+        justify-content:space-around;
+        i{
+            top:.3rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            position: relative;
+            &.icon{
+                background-size: 100%;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-color: white;
+            }
+            &.home.active{
+                background-image: url('./home-active.png');
+                width: 2rem;
+                height: 2rem;
+                top: -.4rem;
+                clear: both;
+
+            }
+            &.home{
+                background-image: url('./home.png');
+               
+            }
+            &.add{
+                background-image: url('./add.png');
+                
+            }
+            &.my.active{
+                background-image: url('./wo-active.png');
+                width: 2rem;
+                height: 2rem;
+                top: -.4rem;
+                
+            }
+            &.my{
+                background-image: url('./wo.png');
+            }
+           
+        }
+        .text{
+            position: absolute;
+            bottom: .2rem;
+            width: 100%;
+            text-align: center;
+            color: #333;
+            font-size: .5rem;
+            line-height: .5rem;
+        }
+       
+        
+    }
+}
+

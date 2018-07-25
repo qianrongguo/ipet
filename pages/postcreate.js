@@ -1,11 +1,33 @@
 import { Component } from 'react'
 import '../styles/postcreate.scss'
+import Sendmenu from '../components/Sendmenu/headPost'
+
 class Index extends Component {
     state = {
+        inputValue:'',
+        textareaValue:'',
         imgs: [
-            'http://sfmimg.b0.upaiyun.com/prod_00/dd3c0d2669b29d39.png!/fw/400',
-            'http://sfmimg.b0.upaiyun.com/prod_00/13eb58a6042f910b.png!/fw/400',
+            // 'http://sfmimg.b0.upaiyun.com/prod_00/dd3c0d2669b29d39.png!/fw/400',
+            // 'http://sfmimg.b0.upaiyun.com/prod_00/13eb58a6042f910b.png!/fw/400',
         ]
+    }
+    handleInputChange(e){
+        this.setState({
+            inputValue:e.target.value
+        });
+    }
+    handleTextareaChange(e){
+        this.setState({
+            textareaValue:e.target.value
+        })
+    }
+
+    handleSubmit(){
+        if (this.props.onSubmit){
+            const inputValue = this.state.inputValue
+            const textareaValue = this.state.textareaValue
+            this.props.onSubmit({inputValue,textareaValue})
+        }
     }
     handleRemove(idx) {
         this.setState({
@@ -38,17 +60,26 @@ class Index extends Component {
         // })
     }
     render() {
-        const { imgs } = this.state
+        const  imgs  = this.state.imgs
+        const inputValue = this.state.inputValue
+        const textareaValue = this.state.textareaValue
         return (
             <div className="stb-post">
+            <Sendmenu />
                 <div>
-                    <textarea className="post-title" placeholder="hi,写下你的标题吧"
-                        style={{ height: '6rem' }}
+                    <textarea className="post-title" 
+                    value={textareaValue}
+                    onChange={this.handleTextareaChange.bind(this)}
+                    placeholder = "hi,写下你的标题吧" 
+                    style={{ height: '6rem' }}
                     ></textarea>
                 </div>
                 <div>
-                    <textarea className="post-title" placeholder="hi,写下你的内容吧"
-                        style={{ height: '16.65rem', marginTop: '.6rem' }}
+                    <textarea className="post-title"
+                    value={inputValue} 
+                    onChange={this.handleInputChange.bind(this)}
+                    placeholder="hi,写下你的内容吧"
+                    style={{ height: '16.65rem', marginTop: '.6rem' }}
                     ></textarea>
                 </div>
 
@@ -87,10 +118,28 @@ class Index extends Component {
                     <div className="clear"></div>
                 </div>
 
-                <button className="btn">发送</button>
+                <button className="btn" onClick={this.handleSubmit.bind(this)}>发送</button>
             </div>
         )
     }
 }
 
-export default Index
+class Head extends Component{
+    state = {
+        comments:[]
+    }
+    handleSubmitComment (comment) {
+        this.state.comments.push(comment)
+        this.setState({
+        comments: this.state.comments
+        })
+      }
+    render(){
+        return(
+            <div>
+                <Index onSubmit={this.handleSubmitComment.bind(this)}/>
+            </div>
+        )
+    }
+}
+export default Head

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Loading from '../components/Loading'
 import fetch from 'isomorphic-fetch'
 import avatar from '../images/icon/avatar.png'
+import MenuBar from '../components/MenuBar'
 
 const avatar2 = 'http://sfmimg.b0.upaiyun.com/prod_00/1b70518c528f199e.jpg'
 
@@ -33,7 +34,7 @@ const Posts = (props) => {
                                 <span>{data.nickname}</span>
                             </div>
                             <div className="content">
-                                <div>{data.title}</div>
+                                <div className="title">{data.title}</div>
                                 {data.description}
                             </div>
                             <div className="imglist count2">
@@ -231,8 +232,15 @@ class PostsPage extends Component {
         // 1 正在请求
         // 2 请求完毕（成功或失败）
         const { isFetching, result } = this.state
-        return isFetching === 2 ? <Posts result={result} /> : (
-            isFetching === 1 ? <Loading /> : null
+        return (
+            <div>
+                <MenuBar url={'/posts'} />
+                {
+                    isFetching === 2 ? <Posts result={result} /> : (
+                        isFetching === 1 ? <Loading /> : null
+                    )
+                }
+            </div>
         )
     }
     componentWillUpdate() {

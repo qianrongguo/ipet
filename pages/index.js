@@ -1,7 +1,6 @@
-import '../styles/flex.scss'
 const Index = () => (
     <div className="box">
-
+        11111111
     </div>
 )
 

@@ -1,0 +1,149 @@
+.myprofile{
+    display: block;
+    .box{
+        height: 2.2rem;
+        position: relative;
+        a{
+            
+            &.back{
+                width: .9rem;
+                height: .9rem;
+                display: block;
+                position: absolute;
+                left: .65rem;
+                top:.65rem;
+                background-image: url('../images/icon/back.png')
+            }
+            &.icon{
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        i {
+            &.title{
+                display: block;
+                widows: 100%;
+                margin: 0 auto;
+                position: relative;
+                top: .55rem;
+                width: 4.6rem;
+                height: 1.1rem;
+                background-image: url('../images/icon/myprofile.png')
+            }
+            &.icon{
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            
+        }
+    }
+    .link-list{
+        padding-left:1rem;
+        margin:0;
+        padding-left: 1rem;
+        list-style: none;
+        .avatarbox{
+            display: block;
+                position: relative;
+                height: 4.35rem;
+                line-height: 200%;
+                
+            .avatar{
+                float: left;
+                left: 0;
+                width: 2.7rem;
+                height: 2.7rem;
+                // transform: translate(50%,50%);
+                background-size: contain;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                margin-top: 1rem;
+            }
+            
+            .btn{
+                display: block;
+                color: #999;
+                font-size:.6rem;
+                width:5rem;
+                float: right;
+                text-align: center;
+                margin: 17px auto;
+                z-index: 2;
+                // box-sizing: content-box;
+                // padding: 20px;
+            }
+            
+            .send{
+                position: absolute;
+                right: 0;
+                top: 0;
+                width:7.35rem;
+                height: 4.35rem;
+                input{
+                    opacity: 0;
+                    padding: 20px;
+                    z-index: 1;
+                }
+            }
+           
+            
+        
+        }
+        .arrow-box{
+            position: relative;
+            height: 3rem;
+
+            .name{
+                display: block;
+                position: absolute;
+                float: left;
+                left: 0;
+                width: 100px;
+                line-height: 3rem;
+                font-size: .65rem;
+                color: #020202;
+            }
+            .text{
+                display: block;
+                position: absolute;
+                float: right;
+                right: 20px;
+                line-height: 3rem;
+                font-size: .65rem;
+                color: #020202;
+            }
+        }
+    }
+}
+.clear{
+    clear: both;
+}
+.thinner-border{
+    position:relative!important;
+}
+.thinner-border::before{
+    content: "";
+    position: absolute !important;
+    width: 200%;
+    height: 200%;
+    border-top: 1px solid #dcdcdc;
+    -webkit-transform: scale(.5);
+    // -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    // -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    // transform: scale(.5);  
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // content: "";
+    //     position: absolute;
+    //     border: 1px solid red;
+    //     width: 200%;
+    //     height: 200%;
+    //     transform: 0 0;
+    //     transform: scale(0.5,0.5);
+    //     box-sizing: border-box;
+}

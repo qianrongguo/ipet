@@ -1,0 +1,87 @@
+.titleBar{
+    .box{
+        position: fixed;
+        top:0;
+        width: 100%;
+        height: 2.5rem;
+        max-width: 25rem;
+        z-index: 999;
+        position: relative;
+        display: -webkit-box;
+        box-sizing: border-box;
+        .wrap{
+            display: flex;
+            -webkit-box-flex: 1;
+            height: 3rem;
+            justify-content:space-around;
+        }
+        .icon{
+                top:.3rem;
+                // width: 1.5rem;
+                // height: 1.5rem;
+                position: relative;
+                background-size: 100%;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                display: inline-block;
+                background-color: white;
+               
+                &.btn-cancle{
+                    left: -2rem;
+                    margin: 0 auto;
+                    top: .6rem;
+                    width: 2.5rem;
+                    height: 1rem;
+                    background-image: url('./cancle.png');
+                }
+                &.post-title{
+                    margin: 0 auto;
+                    position: absolute;
+                    left: 8.5rem;
+                    top: 0.1rem;
+                    width: 5.8rem;
+                    height: 1.1rem;
+                    // text-align: center;
+                    border: 0;
+                    background-image: url('./post.png')
+                }
+                &.btn-post{
+                    margin: 0 auto;
+                    right: -2rem;
+                    top: .6rem;
+                    width: 2.5rem;
+                    height: 1rem;
+                    background-image: url('./send.png')
+                }
+        }
+        
+
+        
+    }
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+.thinner-border{
+    position: relative;
+}
+.thinner-border:after{
+    content: "";
+    position: absolute !important;
+    width: 200%;
+    height: 200%;
+    border-top: 1px solid #dcdcdc;
+    -webkit-transform: scale(.5);
+    // -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    // -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    // transform: scale(.5);  
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

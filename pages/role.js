@@ -1,8 +1,6 @@
 import '../styles/role.scss'
 import { Component } from 'react'
 import Link from 'next/link'
-// 什么都我动手 你一行都写不来
-// 引入css或者scss 需要变量保存吗。。。。你仔细看看其他页
 class Index extends Component {
     state={
         curentRole:0
